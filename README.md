@@ -16,7 +16,7 @@ udon is a scaffolding tool that allows you to bootstrap fastly vue projects. It 
 ## Installation
 Install as global node package:
 ```
-$ npm install -g udon
+$ npm install -g @liqueflies/udon
 ```
 
 ## Usage
