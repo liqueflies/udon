@@ -1,5 +1,5 @@
 {
-  "name": "udon",
+  "name": "@liqueflies/udon",
   "version": "1.0.0",
   "description": "A scaffolding opinionated tool for vue development.",
   "author": "Lorenzo Girardi<lorenzo.girardi93@gmail.com>",
