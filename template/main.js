@@ -5,13 +5,13 @@ import App from '@/App'
 import router from '@/router'
 import store from '@/store'
 import i18n from '@/i18n'
-import { USE_PRERENDER, LOGIN_ROUTE } from '@/utils/config'
+import config from '@/utils/config'
 import { startPrerender, stopPrerender } from '@/utils/prerender'
 
 Vue.config.productionTip = false
 Vue.use(VueMeta)
 
-if (USE_PRERENDER) {
+if (config.USE_PRERENDER) {
   startPrerender();
 }
 
@@ -42,7 +42,7 @@ Vue.mixin({
       next()
     } else {
       next({
-        name: LOGIN_ROUTE
+        name: config.LOGIN_ROUTE
       })
     }
   }
@@ -73,7 +73,7 @@ router.onReady(() => {
 
   // at startup
   const asyncDataHooks = router.getMatchedComponents().map(c => c.asyncData).filter(_ => _)
-  const getAsync = !asyncDataHooks.length
+  const asyncPromises = !asyncDataHooks.length
     ? Promise.resolve(null)
     : Promise.all(asyncDataHooks.map(hook => hook({ store, route: router.currentRoute })))
 
@@ -82,12 +82,12 @@ router.onReady(() => {
   // const hasCheckedForLogin = user ? store.dispatch('user/checkForValidLogin', user) : Promise.resolve()
   const hasCheckedForLogin = Promise.resolve()
 
-  Promise.all([hasCheckedForLogin, getAsync]).then(() => {
+  Promise.all([hasCheckedForLogin, asyncPromises]).then(() => {
     // mount app baby!
     app.$mount('#app')
 
     // stop prerender after mounted app ;)
-    if (USE_PRERENDER) {
+    if (config.USE_PRERENDER) {
       stopPrerender();
     }
   })

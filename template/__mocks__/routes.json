@@ -1,0 +1,6 @@
+{
+  "/api/v1/it/config": "/config",
+  "/api/v1/en/config": "/config",
+  "/api/v1/it/home": "/home",
+  "/api/v1/en/home": "/home"
+}

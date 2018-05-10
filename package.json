@@ -9,13 +9,19 @@
     "udon": "bin/udon",
     "udon-init": "bin/udon-init"
   },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">= 8"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.15.1",
     "execa": "^0.10.0",
+    "fs-extra": "^6.0.1",
     "lodash.merge": "^4.6.1",
     "ncp": "^2.0.0",
     "path": "^0.12.7",
-    "semver": "^5.5.0"
+    "semver": "^5.5.0",
+    "update-notifier": "^2.5.0"
   }
 }

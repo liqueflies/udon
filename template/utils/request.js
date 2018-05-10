@@ -2,12 +2,12 @@ import axios from 'axios'
 import Jsona from 'jsona'
 import { cacheAdapterEnhancer } from 'axios-extensions'
 
-import { BASE_URL } from './config'
+import config from './config'
 
 const jsonApiFormatter = new Jsona()
 
 const request = axios.create({
-  baseURL: BASE_HOST,
+  baseURL: config.BASE_URL,
   headers: {
     'Cache-Control': 'no-cache',
     'Accept': 'application/vnd.api+json',

@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-import { ASYNC_REQUEST_ROUTINE, CLEAR_MODULE_ROUTINE } from '@/utils/config'
+import config from '@/utils/config'
 
 const SET_RESPONSE_DATA = 'SET_RESPONSE_DATA'
 // const SET_RESPONSE_META = 'SET_RESPONSE_META'
@@ -44,7 +44,7 @@ const createMutations = () => {
 
 const createActions = () => {
   return {
-    [ASYNC_REQUEST_ROUTINE] ({ commit }, endpoint) {
+    [config.ASYNC_REQUEST_ROUTINE] ({ commit }, endpoint) {
       return new Promise((resolve, reject) => {
         request.get(endpoint)
           .then(response => {
@@ -62,7 +62,7 @@ const createActions = () => {
           })
       })
     },
-    [CLEAR_MODULE_ROUTINE] ({ commit }) {
+    [config.CLEAR_MODULE_ROUTINE] ({ commit }) {
       const {
         isPending,
         statusCode,

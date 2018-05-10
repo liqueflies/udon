@@ -1,5 +1,5 @@
-import { ASYNC_REQUEST_ROUTINE, API_VERSION } from '@/utils/config'
-import create from './create'
+import config from '@/utils/config'
+import create from '@/store/create'
 
 export function asyncData ({ store, route = {} }) {
   const { endpoint } = route.meta
@@ -8,7 +8,7 @@ export function asyncData ({ store, route = {} }) {
   store.registerModule(route.name, create())
 
   if (endpoint) {
-    return store.dispatch(`${route.name}/${ASYNC_REQUEST_ROUTINE}`, `${API_VERSION}/${lang}/${endpoint}`)
+    return store.dispatch(`${route.name}/${config.ASYNC_REQUEST_ROUTINE}`, `${config.API_VERSION}/${lang}/${endpoint}`)
   } else {
     return Promise.resolve()
   }
@@ -20,22 +20,16 @@ export default {
     isDev: process.env.NODE_ENV !== 'production'
   }),
   computed: {
-    module () {
-      return this.$store.state[this.moduleName]
-    },
-    pageHasData () {
-      return this.module && this.module.data
-    }
     page () {
-      return this.pageHasData ? page.data.page : null
+      return this.$store.state[this.$route.name].data.page
     },
     meta () {
-      return this.pageHasData ? page.data.meta : null
+      return this.$store.state[this.$route.name].data.meta
     }
   },
   created () {
     // save module name
-    this.moduleName = this.$route.params.slug
+    this.moduleName = this.$route.name
 
     // logger dev
     if (this.isDev) {

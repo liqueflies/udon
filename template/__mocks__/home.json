@@ -1,0 +1,10 @@
+{
+  "page": {
+    "title": "Welcome into udon!",
+    "description": "With great power comes great responsibility."
+  },
+  "meta": {
+    "title": "Homepage | Udon",
+    "description": "A scaffolding opinionated tool for vue development."
+  }
+}

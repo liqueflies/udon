@@ -1,4 +1,4 @@
-import { SITE_NAME } from '@/utils/config'
+import config from '@/utils/config'
 
 export default {
   metaInfo () {
@@ -11,10 +11,10 @@ export default {
   },
   computed: {
     metaTitle () {
-      return this.meta.title ? this.meta.title : SITE_NAME
+      return this.meta.title ? this.meta.title : config.SITE_NAME
     },
     metaDescription () {
-      return this.meta.description ? this.meta.description: SITE_NAME
+      return this.meta.description ? this.meta.description: config.SITE_NAME
     }
   }
 }

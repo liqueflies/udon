@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import { DEFAULT_LOCALE } from '@/utils/config'
+import config from '@/utils/config'
+import Home from '@/views/Home'
+import About from '@/views/About'
 import routes from './routes.json'
 
 Vue.use(Router)
@@ -9,6 +11,7 @@ Vue.use(Router)
 const routesFromConfig = routes.map(route => ({
     path: `/:lang/(${route.path.join('|')})`,
     name: route.name,
+    component: About,
     meta: {
       endpoint: route.endpoint
     }
@@ -29,7 +32,7 @@ export default new Router({
     {
       path: '/',
       redirect: {
-        path: `/${DEFAULT_LOCALE}`
+        path: `/${config.DEFAULT_LOCALE}`
       }
     }
   ]

@@ -1,6 +1,6 @@
-# udon
+# udon 
 
-> A scaffolding opinionated tool for vue development.
+> 🍜 A scaffolding opinionated tool for vue development.
 
 ### What is it?
 udon is a scaffolding tool that allows you to bootstrap fastly vue projects. It gives you out-of-the-box the following options:

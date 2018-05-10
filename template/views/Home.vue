@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <img src="../assets/logo.png">
+    <h1> {{ page.title }} </h1>
+    <p> {{ page.description }} </p>
   </div>
 </template>
 
@@ -12,9 +14,6 @@ import meta from '@/mixins/meta'
 export default {
   name: "home",
   asyncData,
-  components: {
-    HelloWorld
-  },
   mixins: [page, meta]
 }
 </script>
