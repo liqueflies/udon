@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "mocks": "node_modules/json-server/bin/index.js __mocks__/server.js --routes __mocks__/routes.json"
+  },
+  "dependencies": {
+    "axios": "latest",
+    "axios-extensions": "latest",
+    "jsona": "latest",
+    "vue-i18n": "latest",
+    "vue-meta": "latest"
+  },
+  "devDependencies": {
+    "json-server": "latest"
+  }
+}
