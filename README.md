@@ -32,3 +32,13 @@ Than scaffold.
 ```
 $ udon init
 ```
+
+Run server with mocks (🚨  do not use if you use your own server)
+```
+$ npm run mocks
+```
+
+Start vue-cli with
+```
+$ udon dev
+```

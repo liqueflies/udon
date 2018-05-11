@@ -1,13 +1,14 @@
 {
   "name": "@liqueflies/udon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A scaffolding opinionated tool for vue development.",
   "author": "Lorenzo Girardi<lorenzo.girardi93@gmail.com>",
   "repository": "git@github.com:liqueflies/udon.git",
   "license": "MIT",
   "bin": {
     "udon": "bin/udon",
-    "udon-init": "bin/udon-init"
+    "udon-init": "bin/udon-init",
+    "udon-dev": "bin/udon-dev"
   },
   "preferGlobal": true,
   "engines": {

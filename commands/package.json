@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "mocks": "node_modules/json-server/bin/index.js src/__mocks__/server.js --routes src/__mocks__/routes.json"
+    "mocks": "node_modules/json-server/bin/index.js src/__mocks__/server.js --routes src/__mocks__/routes.json",
+    "udon-serve": "npm run serve && npm run mocks"
   },
   "dependencies": {
     "axios": "latest",

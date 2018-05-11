@@ -21,8 +21,6 @@ console.log(chalk.blue(
   `🤝  merging package.json...`
 ))
 
-console.log(__dirname)
-
 const pkgPath = process.cwd() + '/package.json'
 
 // project package.json
@@ -48,7 +46,14 @@ fs.writeFile(pkgPath, JSON.stringify(mergedPackage, null, 2), function (error) {
     `🚀  moving files into your project...`
   ))
   
-  fse.copy(__dirname + '/../template', process.cwd() + '/src')
+  const routerPath = process.cwd() + '/src/router.js'
+  const storePath = process.cwd() + '/src/store.js'
+
+  const copy = fse.copy(__dirname + '/../template', process.cwd() + '/src')
+  const unlinkRouter = fs.existsSync(routerPath) ? fs.unlinkSync(routerPath) : Promise.resolve()
+  const unlinkStore = fs.existsSync(storePath) ? fs.unlinkSync(storePath) : Promise.resolve()
+
+  Promise.all([copy, unlinkRouter, unlinkStore])
     .then(() => {
       console.log(chalk.green(
         `🎉  files successfully moved!`
@@ -80,5 +85,5 @@ fs.writeFile(pkgPath, JSON.stringify(mergedPackage, null, 2), function (error) {
         `🚨  You've got an error while moving packages: ${err}`
       ))
       process.exit(1)
-  })
+    })
 })

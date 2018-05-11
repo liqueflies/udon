@@ -3,6 +3,7 @@
     "id": 1,
     "name": "about",
     "path": ["about", "chi-siamo"],
-    "endpoint": "about"
+    "endpoint": "about",
+    "component": "About"
   }
 ]

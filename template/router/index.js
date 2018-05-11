@@ -11,7 +11,7 @@ Vue.use(Router)
 const routesFromConfig = routes.map(route => ({
     path: `/:lang/(${route.path.join('|')})`,
     name: route.name,
-    component: About,
+    component: () => import(`@/views/${route.component}`),
     meta: {
       endpoint: route.endpoint
     }
