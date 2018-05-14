@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "about",
-    "path": ["about", "chi-siamo"],
+    "path": [{ "lang": "en", "url": "about" }, { "lang": "it", "url": "chi-siamo" }],
     "endpoint": "about",
     "component": "About"
   }

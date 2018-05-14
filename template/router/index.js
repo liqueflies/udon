@@ -8,17 +8,21 @@ import routes from './routes.json'
 
 Vue.use(Router)
 
-const routesFromConfig = routes.map(route => ({
-    path: `/:lang/(${route.path.join('|')})`,
-    name: route.name,
+const routesFromConfig = [].concat(...routes.map(route =>
+  route.path.map(path => ({
+    path: `/:lang(${path.lang})/${path.url}`,
+    name: `${route.name}-${path.lang}`,
     component: () => import(`@/views/${route.component}`),
     meta: {
       endpoint: route.endpoint
     }
-  })
-)
+  }))
+))
+
+// console.log([].concat(...routesFromConfig))
 
 export default new Router({
+  mode: 'history',
   routes: [
     ...routesFromConfig,
     {

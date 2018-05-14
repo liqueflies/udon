@@ -1,6 +1,6 @@
 {
   "name": "@liqueflies/udon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A scaffolding opinionated tool for vue development.",
   "author": "Lorenzo Girardi<lorenzo.girardi93@gmail.com>",
   "repository": "git@github.com:liqueflies/udon.git",

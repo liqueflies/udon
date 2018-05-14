@@ -4,11 +4,11 @@
     "udon-serve": "npm run serve && npm run mocks"
   },
   "dependencies": {
-    "axios": "latest",
-    "axios-extensions": "latest",
-    "jsona": "latest",
-    "vue-i18n": "latest",
-    "vue-meta": "latest"
+    "axios": "^0.18.0",
+    "axios-extensions": "^3.0.2",
+    "jsona": "^1.1.10",
+    "vue-i18n": "^7.6.0",
+    "vue-meta": "^1.5.0"
   },
   "devDependencies": {
     "json-server": "latest"

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{ name: 'home', params: $route.params }">Home</router-link> |
-      <router-link :to="{ name: 'about', params: $route.params }">About</router-link>
+      <router-link :to="{ name: 'home', params: { lang: $route.params.lang }}">Home</router-link> |
+      <router-link :to="{ name: `about-${$route.params.lang}`, params: { lang: $route.params.lang }}">About</router-link>
     </div>
     <router-view/>
   </div>
